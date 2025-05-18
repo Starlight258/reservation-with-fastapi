@@ -11,9 +11,8 @@ from sqlmodel import Field, SQLModel, create_engine, Session, select
 
 app = FastAPI()
 
-# 정적 파일 서빙 설정
 app.mount("/static", StaticFiles(directory="resources/static"), name="static")
-# CSS, JS, Images 직접 접근을 위한 설정
+
 app.mount("/css", StaticFiles(directory="resources/static/css"), name="css")
 app.mount("/js", StaticFiles(directory="resources/static/js"), name="js")
 app.mount("/image", StaticFiles(directory="resources/static/image"), name="image")
